@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  tests:
+    build: .
+    volumes:
+      - ./allure-results:/app/allure-results
+    command: >
+      bash -c "pytest -v tests/test_main_page.py --alluredir=./allure-results"
+
+  allure:
+    image: frankescobar/allure-docker-service
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 1
+      KEEP_HISTORY: "TRUE"
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./allure-results:/app/allure-results
+    depends_on:
+      - tests

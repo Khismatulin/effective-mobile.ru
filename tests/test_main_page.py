@@ -9,11 +9,9 @@ class TestMainPageNavigation:
     @allure.title("Проверка навигации по разделу '{section_name}'")
     @pytest.mark.parametrize("section_name", [
         "О нас",
-        "Контакты",
-        "Услуги",
-        "Проекты",
-        "Карьера",
-        "Блог"
+        "Вакансии",
+        "Отзывы",
+        "Контакты"
     ])
     def test_navigation(self, page, section_name):
         main_page = MainPage(page)

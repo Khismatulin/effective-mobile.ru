@@ -6,21 +6,17 @@ class MainPage(BasePage):
     URL = "https://effective-mobile.ru/"
     
     # Селекторы для основных блоков навигации
-    ABOUT_US_LINK = "a[href*='about']"
-    CONTACTS_LINK = "a[href*='contacts']"
-    SERVICES_LINK = "a[href*='services']"
-    PROJECTS_LINK = "a[href*='projects']"
-    CAREERS_LINK = "a[href*='careers']"
-    BLOG_LINK = "a[href*='blog']"
+    ABOUT_US_LINK = "a[href*='#about']"
+    VACANCIES_LINK = "a[href*='#specializations']"
+    REVIEWS_LINK = "a[href*='#testimonials']"
+    CONTACTS_LINK = "a[href*='#contact']"
     
     # Карта селекторов и ожидаемых URL для параметризованного тестирования
     NAVIGATION_MAP = {
-        "О нас": {"selector": ABOUT_US_LINK, "url_part": "/about"},
-        "Контакты": {"selector": CONTACTS_LINK, "url_part": "/contacts"},
-        "Услуги": {"selector": SERVICES_LINK, "url_part": "/services"},
-        "Проекты": {"selector": PROJECTS_LINK, "url_part": "/projects"},
-        "Карьера": {"selector": CAREERS_LINK, "url_part": "/careers"},
-        "Блог": {"selector": BLOG_LINK, "url_part": "/blog"}
+        "О нас": {"selector": ABOUT_US_LINK, "url_part": "/#about"},
+        "Контакты": {"selector": VACANCIES_LINK, "url_part": "/#specializations"},
+        "Услуги": {"selector": REVIEWS_LINK, "url_part": "/#testimonials"},
+        "Проекты": {"selector": CONTACTS_LINK, "url_part": "/#contact"}
     }
     
     def __init__(self, page):
